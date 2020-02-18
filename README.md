@@ -10,8 +10,10 @@ The backend service consists of two microservices: dev-user and dev-team.
 It is exposed through a REST API.
 - https://github.com/ckbball/dev-edge
 
-Dev-user is built with Golang, Protobufs, and gRPC for the application code and MongoDB for storage. It also exposes a REST API using grpc-gateway allowing web clients to make api calls to a gRPC server. The project can be built and ran locally using `docker-compose up` and the API can be accessed at http://localhost:8080.
+Dev-user is built with Go, Protobufs, and gRPC for the application code and MongoDB for storage. It also exposes a REST API using grpc-gateway allowing web clients to make api calls to a gRPC server. The project can be built and ran locally using `docker-compose up` and the API can be accessed at http://localhost:8080. User authentication is achieved through Json Web Tokens.
 
-Dev-team is build with Golang, Protobufs and gRPC for the application code and MySQL for storage. A REST API is exposed through the grpc-gateway attached to the gRPC server allowing web clients to make api calls. The project can be built and ran locally using `docker-compose up` and the API can be accessed at http://localhost:8082.
+Dev-team is built with Go, Protobufs and gRPC for the application code and MySQL for storage. The service methods can only accessed by the REST API exposed by the edge server. The project can be built and ran locally using `docker-compose up` and the API can be accessed at http://localhost:8082.
+
+Dev-edge is built with Go and the standard library and exposes a REST API over http. The project can be built and ran locally using `docker-compose up` and the API can be accessed at http://localhost:3000.
 
 The project is currently an MVP.
